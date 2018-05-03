@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\components;
+namespace common\components;
 
 use Yii;
 
@@ -39,7 +39,7 @@ class StringHelper
 
 		$temp = substr($str, 0, $limit);
 
-		return substr($temp, 0, strrpos($temp, ' '));
+		return substr($temp, 0, strrpos($temp, ' ')) . '...';
 	}
 
 	/**

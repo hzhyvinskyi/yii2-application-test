@@ -1,0 +1,30 @@
+<?php
+
+namespace console\models;
+
+use Yii;
+
+class Employee
+{
+	public static function getAllData()
+	{
+		$sql = "SELECT * FROM employee";
+
+		return Yii::$app->db->createCommand($sql)->queryAll();
+	}
+
+	public static function salarySender(array $employees)
+	{
+		foreach ($employees as $employee) {
+			$result = Yii::$app->mailer->compose('/employee/salary_accounting', [
+				'employee' => $employee,
+			])
+				->setFrom('hzhyvinskyi@gmail.com')
+				->setTo($employee['Email'])
+				->setSubject('Ведомости о зарплате')
+				->send();
+		}
+
+		return $result;
+	}
+}

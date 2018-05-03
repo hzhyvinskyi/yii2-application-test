@@ -15,6 +15,6 @@ class News
 	{
 		$sql = "SELECT COUNT(*) FROM news";
 
-		return Yii::$app->db->createCommand($sql)->queryOne();
+		return Yii::$app->db->createCommand($sql)->queryScalar();
 	}
 }
