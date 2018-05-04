@@ -6,8 +6,14 @@ use yii\console\Controller;
 use console\models\Time;
 use yii\helpers\Console;
 
+/**
+ * Logs the time when the method was called
+ */
 class LoggerController extends Controller
 {
+	/**
+	 * Gets formatted time from model and log it
+	 */
 	public function actionLog()
 	{
 		$time = Time::getTime();

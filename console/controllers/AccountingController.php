@@ -12,7 +12,7 @@ use console\models\Employee;
 class AccountingController extends Controller
 {
 	/**
-	 * get employee data, send message and log information for statistics
+	 * Get employee's data, send message and log information for statistics
 	 */
 	public function actionSalary()
 	{

@@ -6,6 +6,11 @@ use Yii;
 
 class Time
 {
+	/**
+	 * Gets formatted time via formatter component
+	 * @return string
+	 * @throws \yii\base\InvalidConfigException
+	 */
 	public static function getTime()
 	{
 		Yii::$app->formatter->timeZone = 'Europe/Kiev';
