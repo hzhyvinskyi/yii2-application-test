@@ -13,6 +13,11 @@ class Employee
 		return Yii::$app->db->createCommand($sql)->queryAll();
 	}
 
+	/**
+	 * Send salary information message to user
+	 * @param array $employees
+	 * @return bool
+	 */
 	public static function salarySender(array $employees)
 	{
 		foreach ($employees as $employee) {

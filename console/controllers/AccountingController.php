@@ -6,8 +6,14 @@ use Yii;
 use yii\console\Controller;
 use console\models\Employee;
 
+/**
+ * Mailing information about salary
+ */
 class AccountingController extends Controller
 {
+	/**
+	 * get employee data, send message and log information for statistics
+	 */
 	public function actionSalary()
 	{
 		$employees = Employee::getAllData();

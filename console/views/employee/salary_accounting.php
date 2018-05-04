@@ -1,3 +1,4 @@
+<?php /** @var $employee[] array */ ?>
 <p>
 	Уважаемый
 	<?php echo $employee['Имя'] . ' ' . $employee['Фамилия'] . '! ';
