@@ -35,4 +35,4 @@ phpunit.phar
 /.vagrant
 
 # logs
-/frontend/web/log.txt
+frontend/web/log.txt
