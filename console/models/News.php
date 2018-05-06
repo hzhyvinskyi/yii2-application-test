@@ -7,6 +7,7 @@ use Yii;
 class News
 {
 	const STATUS_NOT_SENT = 1;
+	const STATUS_SENT = 2;
 
 	public static function getNewsForSend()
 	{
@@ -30,7 +31,7 @@ class News
 
 	public static function changeNewsStatus()
 	{
-		$sql = "UPDATE news SET status = 2 WHERE status = 1";
+		$sql = "UPDATE news SET status = " . self::STATUS_SENT . " WHERE status = " . self::STATUS_NOT_SENT;
 
 		Yii::$app->db->createCommand($sql)->execute();
 	}

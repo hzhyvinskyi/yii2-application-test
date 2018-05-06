@@ -21,7 +21,7 @@ class Employee
 	public static function salarySender(array $employees)
 	{
 		foreach ($employees as $employee) {
-			$result = Yii::$app->mailer->compose('/employee/salary_accounting', [
+			Yii::$app->mailer->compose('/employee/salary_accounting', [
 				'employee' => $employee,
 			])
 				->setFrom('hzhyvinskyi@gmail.com')
@@ -29,7 +29,5 @@ class Employee
 				->setSubject('Ведомости о зарплате')
 				->send();
 		}
-
-		return $result;
 	}
 }

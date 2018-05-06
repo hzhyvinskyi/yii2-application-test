@@ -20,11 +20,9 @@ class AccountingController extends Controller
 
 		$result = Employee::salarySender($employees);
 
-		if ($result) {
-			$salaryData = Yii::$app->formatter->format('now', 'date') .
-				' Начисление зарплаты сотрудникам за прошлый месяц' . PHP_EOL;
+		$salaryData = Yii::$app->formatter->format('now', 'date') .
+			' Начисление зарплаты сотрудникам за прошлый месяц' . PHP_EOL;
 
-			file_put_contents(__DIR__ . '/../../frontend/web/log.txt', $salaryData, FILE_APPEND);
-		}
+		file_put_contents(Yii::$app->params['logFilePath'], $salaryData, FILE_APPEND);
 	}
 }

@@ -18,6 +18,8 @@ class m180502_103638_create_news_table extends Migration
 			'content' => $this->text(),
 			'status' => $this->tinyInteger(2),
         ]);
+
+        $this->createIndex('idx-post-status', 'news', 'status');
     }
 
     /**
@@ -26,5 +28,7 @@ class m180502_103638_create_news_table extends Migration
     public function safeDown()
     {
         $this->dropTable('news');
+
+        $this->dropIndex('idx-post-status', 'news');
     }
 }
