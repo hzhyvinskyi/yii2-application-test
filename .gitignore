@@ -33,6 +33,3 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
-
-# logs
-frontend/web/log.txt
